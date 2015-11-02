@@ -15,7 +15,7 @@
 		this.element = element;
 		
 		return element.each(function(){
-			plugin.initializePlugin(element);
+			plugin.initializePlugin($(this));
 		});
 	};
 	
