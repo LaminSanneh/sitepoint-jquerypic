@@ -1,0 +1,22 @@
+.thumbnail{
+	display: inline-block;
+	width: 150px;
+}
+
+.fullversion-container{
+	margin: 40px 0;
+}
+
+.full-version{
+	display: inline-block;
+	width: 500px;
+}
+
+.thumbnails, .fullversion-container{
+	text-align: center;
+}
+
+.jquerypic{
+	border: 4px solid #000000;
+	border-radius: 5px;
+}
