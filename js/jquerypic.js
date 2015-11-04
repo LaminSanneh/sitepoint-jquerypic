@@ -14,9 +14,11 @@
 		this.settings = settings;
 		this.element = element;
 		
-		return element.each(function(){
+		element.each(function(){
 			plugin.initializePlugin($(this));
 		});
+		
+		return this;
 	};
 	
 	Jquerypic.prototype.initializePlugin = function (element) {
@@ -28,7 +30,12 @@
 		});
 	}
 	
+	Jquerypic.prototype.stop = function () {
+		this.element.off("click", this.settings.thumbnail);
+	}
+	
 	$.fn.jquerypic = function (options) {
 		instance = new Jquerypic(this, Jquerypic);
+		return instance;
 	}; 
 })(jQuery)
