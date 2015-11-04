@@ -15,7 +15,10 @@
 		this.element = element;
 		
 		return element.each(function(){
-			plugin.initializePlugin($(this));
+			// Intentionally made faulty in this branch
+			// Should pass in $(this) in initializePlugin function 
+			// instead of element Just want to make a point
+			plugin.initializePlugin(element);
 		});
 	};
 	
