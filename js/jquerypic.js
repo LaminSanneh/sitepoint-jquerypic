@@ -14,12 +14,14 @@
 		this.settings = settings;
 		this.element = element;
 		
-		return element.each(function(){
+		element.each(function(){
 			// Intentionally made faulty in this branch
 			// Should pass in $(this) in initializePlugin function 
 			// instead of element Just want to make a point
 			plugin.initializePlugin(element);
 		});
+		
+		return this;
 	};
 	
 	Jquerypic.prototype.initializePlugin = function (element) {
@@ -31,7 +33,12 @@
 		});
 	}
 	
+	Jquerypic.prototype.stop = function () {
+		this.element.off("click", this.settings.thumbnail);
+	}
+	
 	$.fn.jquerypic = function (options) {
 		instance = new Jquerypic(this, Jquerypic);
+		return instance;
 	}; 
 })(jQuery)
